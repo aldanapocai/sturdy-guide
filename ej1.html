@@ -9,9 +9,45 @@
 <body>
     <script>
 
+//--------------------------------------STRING METODOS--------------------------------------
+
+/*
         var str1 = 'Hola';
         console.log(str1,typeof str1);
         console.log(str1.length);
+        console.log(str1.charAt(0));
+
+        var str2='Mundo';
+        var str3= str1.concat(' ').concat(str2);
+        console.log(str3);
+        console.log(str3.indexOf('o'));
+        var str4=str3.replace('Hola','Chau');
+        console.log(str4);
+        var array1 =str4.split(' ');//Separa en los espacios. Separa palabra x palabra 
+        var array2 =str4.split(''); //Separa letra x letra
+        console.log(array1);
+        console.log(array2);
+        var str5= array1.join('\n*'); //Junta los elementos del array 
+        console.log(str5);
+        console.log(str5.substr(2,4));//A partir d donde y la cant de caracteres
+        console.log(str5.toLowerCase());
+        console.log(str4.toUpperCase());
+        var str6='   123      ';
+        console.log(str6);
+        console.log( '(' + str6.trim() + ')' );
+*/
+//---------------------//ARRAY METODOS-----------------------------------------------------------------
+ 
+        var numeros =[1,2,3,4,5,6,7,8,9];
+        console.log(numeros[2]);
+
+        for(var i=0;i<numeros.length; i++){
+            console.log(numeros[i]);
+        }
+
+
+
+
     </script>
 </body>
 </html>
