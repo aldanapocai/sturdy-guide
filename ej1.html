@@ -9,7 +9,7 @@
 <body>
     <script>
 
-//--------------------------------------STRING METODOS--------------------------------------
+//--------------------------------------STRING METOHDS--------------------------------------
 
 /*
         var str1 = 'Hola';
@@ -36,17 +36,167 @@
         console.log(str6);
         console.log( '(' + str6.trim() + ')' );
 */
-//---------------------//ARRAY METODOS-----------------------------------------------------------------
- 
+//---------------------//ARRAY METOHDS-----------------------------------------------------------------
+ /*
         var numeros =[1,2,3,4,5,6,7,8,9];
         console.log(numeros[2]);
 
         for(var i=0;i<numeros.length; i++){
             console.log(numeros[i]);
         }
+        console.log('-----')
+        numeros.push(99);
+        for(var i=0;i<numeros.length; i++){
+            console.log(numeros[i]);
+        }
+
+        console.log('-----')
+        numeros.pop();
+        numeros.pop();
+        for(var i=0;i<numeros.length; i++){
+            console.log(numeros[i]);
+        }
+        
+        console.log('-----')
+        numeros.unshift(88);
+        for(var i=0;i<numeros.length; i++){
+            console.log(numeros[i]);
+        }
+
+        console.log('-----')
+        numeros.shift();
+        numeros.shift();
+        for(var i=0;i<numeros.length; i++){
+            console.log(numeros[i]);
+        }
+
+        console.log('-----')
+        numeros.splice(2,1);
+        console.log(numeros);
+*/
+//---------------------//OBJETOS-----------------------------------------------------------------
+//Un array es un tipo especial de objeto
+
+        var usuario1={
+            nombre:'Juan',
+            apellido:'Perez',
+            edad:32,
+            mail:'d@y',
+            foto:'https://cdn4.iconfinder.com/data/icons/zoo-line-welcome-to-zootopia/512/sloth-512.png',
+            sumar: function(a,b){ //es privada
+            return a+b;
+        }
+        };
+        var usuario2={
+            nombre:'Ana',
+            apellido:'Gonzalez',
+            edad:27,
+            mail:'m@y',
+            foto:'https://cdn4.iconfinder.com/data/icons/summer-line-5/48/drink_ice_fresh_juice_summer-512.png',
+            sumar: function(a,b){ //es privada, independiente del usuario1
+            return a+b;
+        }
+        };  var usuario3={
+            nombre:'Paula',
+            apellido:'Fernandez',
+            edad:41,
+            mail:'p@y',
+            foto:'https://cdn2.iconfinder.com/data/icons/artificial-intelligence-52/48/bl_1647_Robot_artificial_intelligence_worker_dog_magnifier_bot-256.png',
+            sumar: function(a,b){ //es privada
+            return a+b;
+        }
+        };
+        var usuario1Array=[
+            'Juan',
+            'Perez',
+            32,
+            'd@y',
+            'https://cdn4.iconfinder.com/data/icons/zoo-line-welcome-to-zootopia/512/sloth-512.png'
+        ];
+
+        console.log(usuario1);
+        console.log(usuario1Array);
+
+        console.log(usuario1.nombre);
+        console.log(usuario1['nombre']); //Otra forma de conseguir usando la clave que quiero obtener
+        
+        console.log(usuario1Array[0]);
+
+
+        //Para recorrer ARRAY
+            //Para usar For Each necesito un call back que es una funcion
+        console.log('------------');
+        usuario1Array.forEach(function(usuario,index)
+        {
+            console.log(index,'-->',usuario)
+        });
+        console.log('------------');//Muestra la clave del objeto
+        for(var key in usuario1){
+            console.log(key);
+        }
+
+        console.log('------------');//Muestra la clave del objeto+el objeto correspondiente
+        for(var key in usuario1){
+            console.log(key,': ',usuario1[key]);
+        }
+
+        console.log(Object.keys(usuario1)); //Muestra las claves del objeto usuario1
+        console.log(Object.keys(usuario1).length); //Muestra la cant de claves en usuario1
+
+        console.log('------------');
+
+        function sumar(a,b){
+            return a+b;
+        }
+        //Asigno funcion anonima a una variable. Usada en objetos
+        
+        var sumar2= function(a,b){
+            return a+b;
+        }
+
+        console.log(sumar(5,2));
+
+        //Para contemplar si no le asigno valores
+
+        var res=sumar();
+        console.log(isNaN(res)?'Resultado no valido': res);
+
+        res=usuario1.sumar(3,6);
+        console.log(isNaN(res)?'Resultado no valido':res);
+
+        usuario1.multiplicar=function(a,b){
+            return a*b;
+        }
+
+        console.log(usuario1.multiplicar(3,5));
+        console.log(usuario1);
 
 
 
+        //Creo un ARRAY DE OBJETOS
+
+        var usuarios= [];
+        console.log(usuarios);
+
+        usuarios.push(usuario1);
+        console.log('------------');
+        console.log(usuarios);
+
+        
+         usuarios.push(usuario2);
+         console.log('------------');
+        console.log(usuarios);
+        
+        usuarios.push(usuario3);
+         console.log('------------');
+         console.log(usuarios);
+
+
+//Para recorrer el array de objetos
+
+usuarios.forEach(function(usuario){
+    console.log(usuario.nombre);
+});
 
     </script>
 </body>
